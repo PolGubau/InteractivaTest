@@ -5,7 +5,7 @@ import { Button, StyleSheet, Text, View } from "react-native";
 type ExploreScreenProps = BottomTabScreenProps<RootStackParamList, "Quiz">;
 
 const QuizScreen = ({ route }: ExploreScreenProps) => {
-	const { exam } = route.params as { exam: Exam };
+	const { exam } = route.params;
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [score, setScore] = useState(0);
 	const [showScore, setShowScore] = useState(false);
@@ -46,9 +46,9 @@ const QuizScreen = ({ route }: ExploreScreenProps) => {
 	return (
 		<View style={styles.container}>
 			<Text style={styles.questionText}>{currentQ.question}</Text>
-			{currentQ.options.map((option, index) => (
+			{currentQ.options.map((option) => (
 				<Button
-					key={index}
+					key={option}
 					title={option}
 					onPress={() => handleAnswer(option)}
 				/>

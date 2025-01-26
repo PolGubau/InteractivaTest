@@ -1,15 +1,14 @@
-// app/data/sql.json
 {
-  "id": 2,
+  "id": 124341342,
   "name": "SQL",
   "description": "Fundamentos de bases de datos y consultas SQL.",
   "exams": [
     {
-      "id": 1,
+      "id": 1234123532141,
       "name": "Examen básico de SQL",
       "questions": [
         {
-          "id": 1,
+          "id": 2135124321421,
           "question": "¿Qué significa SQL?",
           "options": [
             "Structured Query Language",
@@ -20,7 +19,7 @@
           "correctAnswer": "Structured Query Language"
         },
         {
-          "id": 2,
+          "id": 134123421342,
           "question": "¿Qué comando se usa para seleccionar datos de una tabla?",
           "options": [
             "INSERT",
@@ -33,11 +32,11 @@
       ]
     },
     {
-      "id": 2,
+      "id": 5413242,
       "name": "Examen avanzado de SQL",
       "questions": [
         {
-          "id": 1,
+          "id": 152431,
           "question": "¿Qué es una clave primaria?",
           "options": [
             "Un identificador único para cada registro",
@@ -48,7 +47,7 @@
           "correctAnswer": "Un identificador único para cada registro"
         },
         {
-          "id": 2,
+          "id": 213413242,
           "question": "¿Qué hace el comando JOIN?",
           "options": [
             "Combina filas de dos o más tablas",

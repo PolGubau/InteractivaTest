@@ -1,15 +1,14 @@
-// app/data/python.json
 {
-  "id": 1,
+  "id": 12454352435,
   "name": "Python",
   "description": "Fundamentos de programación en Python.",
   "exams": [
     {
-      "id": 1,
+      "id": 112312431,
       "name": "Examen básico de Python",
       "questions": [
         {
-          "id": 1,
+          "id": 1324543653245,
           "question": "¿Qué es Python?",
           "options": [
             "Un lenguaje de programación",
@@ -20,7 +19,7 @@
           "correctAnswer": "Un lenguaje de programación"
         },
         {
-          "id": 2,
+          "id": 224362345,
           "question": "¿Cómo se define una función en Python?",
           "options": [
             "function myFunction()",
@@ -33,11 +32,11 @@
       ]
     },
     {
-      "id": 2,
+      "id": 2264,
       "name": "Examen avanzado de Python",
       "questions": [
         {
-          "id": 1,
+          "id": 165233,
           "question": "¿Qué es un decorador en Python?",
           "options": [
             "Una función que modifica otras funciones",
@@ -48,7 +47,7 @@
           "correctAnswer": "Una función que modifica otras funciones"
         },
         {
-          "id": 2,
+          "id": 453452,
           "question": "¿Qué hace el método `__init__` en Python?",
           "options": [
             "Inicializa una clase",

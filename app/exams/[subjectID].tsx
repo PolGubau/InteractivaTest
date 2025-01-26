@@ -1,5 +1,6 @@
-import type { Exam, RootStackParamList } from "@/types/types";
-import type { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
+import { getSubjectById } from "@/data/data";
+import type { Exam } from "@/types/types";
+import { Link, useLocalSearchParams } from "expo-router";
 import React from "react";
 import {
 	FlatList,
@@ -10,18 +11,28 @@ import {
 } from "react-native";
 
 // Define las props de ExamsScreen
-type ExamsScreenProps = BottomTabScreenProps<RootStackParamList, "Exams">;
 
-const ExamsScreen = ({ route, navigation }: ExamsScreenProps) => {
-	const { subject } = route.params; // TypeScript sabe que `subject` es de tipo `Subject`
+const SubjectScreen = () => {
+	const { subjectID } = useLocalSearchParams();
+	if (!subjectID || typeof subjectID !== "string") {
+		return null;
+	}
+
+	const subject = getSubjectById(Number.parseInt(subjectID));
+	if (!subject) {
+		return null;
+	}
 
 	const renderExam = ({ item }: { item: Exam }) => (
-		<TouchableOpacity
+		<Link
 			style={styles.examCard}
-			onPress={() => navigation.navigate("Quiz", { exam: item })}
+			href={{
+				pathname: "/exams/exam/[examID]",
+				params: { examID: item.id.toString() },
+			}}
 		>
 			<Text style={styles.examName}>{item.name}</Text>
-		</TouchableOpacity>
+		</Link>
 	);
 
 	return (
@@ -57,4 +68,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default ExamsScreen;
+export default SubjectScreen;

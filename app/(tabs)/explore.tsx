@@ -3,17 +3,18 @@ import type { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
 import React from "react";
 import {
 	FlatList,
+	SafeAreaView,
 	StyleSheet,
 	Text,
 	TouchableOpacity,
-	View
+	View,
 } from "react-native";
 import pythonData from "../../data/python.json";
 import sqlData from "../../data/sql.json";
 const subjects = [pythonData, sqlData] as Subject[];
 type ExploreScreenProps = BottomTabScreenProps<RootStackParamList, "Explore">;
 
-export const ExploreScreen = ({ navigation }: ExploreScreenProps) => {
+const ExploreScreen = ({ navigation }: ExploreScreenProps) => {
 	const renderSubject = ({ item }: { item: Subject }) => (
 		<TouchableOpacity
 			style={styles.subjectCard}
@@ -129,19 +130,19 @@ export const ExploreScreen = ({ navigation }: ExploreScreenProps) => {
 	// 	</ParallaxScrollView>
 	// );
 	return (
-		<View style={styles.container}>
+		<SafeAreaView style={styles.container}>
 			<FlatList
 				data={subjects}
 				renderItem={renderSubject}
 				keyExtractor={(item) => item.id.toString()}
 			/>
-		</View>
+		</SafeAreaView>
 	);
 };
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1,
+		flex: 10,
 		padding: 20,
 	},
 	headerImage: {
@@ -169,3 +170,5 @@ const styles = StyleSheet.create({
 		color: "#666",
 	},
 });
+
+export default ExploreScreen;
